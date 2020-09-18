@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title> Count divisioners</title>
+</head>
+<body>
+<h3 style="color: blueviolet "> Đếm số ước của 1 số (khác 0 nhé)</h3>
+Nhập vào số cần đếm <input type="number" id="num"><br>
+<input type="button" onclick="count()" value="Đếm đi" />
+<p id="count"> </p>
+<script>
+    function count() {
+        let dem = 0;
+        document.getElementById('count').innerHTML = " ";
+        let num = parseInt(document.getElementById('num').value) ;
+        if (num < 1)
+            document.getElementById('count').innerHTML = "Không hợp lệ";
+        else {
+            for ( let i = 2; i <= (num/2);i++ ) {
+                if (num %i==0) {
+                dem++;
+                }
+            }
+            document.getElementById('count').innerHTML = dem;
+        }
+    }
+</script>
+</body>
+</html>
